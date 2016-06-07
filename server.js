@@ -46,6 +46,7 @@ app.get('/api/comments', function(req, res) {
 });
 
 app.post('/api/comments', function(req, res) {
+  console.log('Data received:', req.body);
   fs.readFile(COMMENTS_FILE, function(err, data) {
     if (err) {
       console.error(err);
@@ -73,5 +74,5 @@ app.post('/api/comments', function(req, res) {
 
 
 app.listen(app.get('port'), function() {
-  console.log('Server started: http://localhost:' + app.get('port') + '/');
+  console.log('Server started: http://localhost:' + app.get('port') + '/ !!!');
 });
